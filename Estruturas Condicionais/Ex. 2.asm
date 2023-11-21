@@ -1,3 +1,5 @@
+# Ler dois números e escrever a comparação entre eles.
+
 .data
 	str1: .asciiz "Valor de A:\n"
 	str2: .asciiz "Valor de B:\n"

@@ -1,3 +1,5 @@
+# Ler dois números, substrair o maior pelo menor e escrever o resultado.
+
 .data
     str1: .asciiz "Valor de A:\n"
     str2: .asciiz "Valor de B:\n"

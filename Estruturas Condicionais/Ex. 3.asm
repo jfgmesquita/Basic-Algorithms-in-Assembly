@@ -1,3 +1,9 @@
+# Calcule o IMC de uma pessoa (IMC = Peso / (Altura * Altura)) e escreve a sua condição, segundo a seguinte tabela:
+#	IMC	Condição
+#	< 20	Magro
+#	<= 25	Normal
+#	> 25	Obeso
+
 .data
 	num:	.float 0.0
 	mag:	.float 20.0

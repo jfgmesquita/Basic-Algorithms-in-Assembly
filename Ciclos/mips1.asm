@@ -1,4 +1,4 @@
-# Imprime o valor de x de 0 até 10. (DO FOR)
+# Imprime o valor de x de 0 atÃ© 10, num ciclo FOR.
 
 .data
 	entrada: .asciiz "\n Valor de x: "

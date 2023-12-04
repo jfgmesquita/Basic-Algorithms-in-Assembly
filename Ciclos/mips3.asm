@@ -1,9 +1,8 @@
-# Lê um número introduzido pelo utilizador e apresenta-o em binário.
-# EM CONSTRUÇÃO
+# LÃª um nÃºmero introduzido pelo utilizador e apresenta-o em binÃ¡rio.
 
 .data
-	entrada: .asciiz "Introduza um número: "
-	saida: .asciiz "\n O valor do número em binário é "
+	entrada: .asciiz "Introduza um nÃºmero: "
+	saida: .asciiz "\nEsse nÃºmero em binÃ¡rio Ã© "
 	zero: .asciiz "0"
 	um: .asciiz "1"
 .text
@@ -20,23 +19,30 @@ main:
 	syscall
 	
 	li $t1, 0
-	li $t4, 0x80000000
+	li $t2, 0x80000000
+	
 	for:
 		bgt $t1, 31, fim
-			and $t2, $t0, $t4
-			beqz $t2, igual
-			bnez $t2, diferente
+		and $t3, $t0, $t2
+		beqz $t3, igual
+		bnez $t3, diferente
 		
 		igual:
 			li $v0, 4
 			la $a0, zero
 			syscall
-			b enf_if
+			b end_if
 		
 		diferente:
 			li $v0, 4
 			la $a0, um
 			syscall
 		
-		
+		end_if:
+			sll $t0, $t0, 1
+			add $t1, $t1, 1
+			b for
 	
+	fim:
+		li $v0, 10
+		syscall

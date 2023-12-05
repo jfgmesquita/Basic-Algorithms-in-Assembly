@@ -1,7 +1,7 @@
 # Imprime o valor de x de 0 até 10, num ciclo FOR.
 
 .data
-	entrada: .asciiz "\n Valor de x: "
+	entrada: .asciiz "\nValor de x: "
 .text
 .globl main
 main:

@@ -1,9 +1,9 @@
 # Ler dois números, substrair o maior pelo menor e escrever o resultado.
 
 .data
-    str1: .asciiz "Valor de A:\n"
-    str2: .asciiz "Valor de B:\n"
-    str3: .asciiz "Resultado:\n"
+    str1: .asciiz " Valor de A: "
+    str2: .asciiz " Valor de B: "
+    str3: .asciiz " Resultado: "
 .text
 .globl main
 main:

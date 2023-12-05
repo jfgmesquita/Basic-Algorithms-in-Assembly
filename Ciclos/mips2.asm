@@ -1,7 +1,7 @@
 # Imprime o valor de a de 0 até 20, num ciclo WHILE.
 
 .data
-	entrada: .asciiz "\nValor de a: "
+	entrada: .asciiz "\n Valor de a: "
 .text
 .globl main
 main:

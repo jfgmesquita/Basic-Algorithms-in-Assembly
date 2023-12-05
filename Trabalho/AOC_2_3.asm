@@ -1,9 +1,10 @@
-# Escreva um programa que leia 3 n˙meros inteiros do utilizador, garantindo que todos eles s„o positivos e diferentes entre si. Se o utilizador tentar introduzir um valor igual a um valor j· introduzido, o programa dever· repetir o pedido de introduÁ„o do valor.
+# Escreva um programa que leia 3 n√∫meros inteiros do utilizador, garantindo que todos eles s√£o positivos e diferentes entre si. Se o utilizador tentar introduzir um valor igual a um valor j√° introduzido, o programa dever√° repetir o pedido de introdu√ß√£o do valor.
+# EM CONSTRU√á√ÉO
 
 .data
 	barra: .asciiz "\n****************************************************************"
-	intro: .asciiz "\n Introduza 3 n˙meros inteiros, positivos e diferentes entre si."
-	entrada: .asciiz "\n Introduza um dos n˙meros: "
+	intro: .asciiz "\n Introduza 3 n√∫meros inteiros, positivos e diferentes entre si."
+	entrada: .asciiz "\n Introduza um dos n√∫meros: "
 	
 
 .text

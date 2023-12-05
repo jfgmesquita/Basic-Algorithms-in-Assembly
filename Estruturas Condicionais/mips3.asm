@@ -8,8 +8,8 @@
 	num:	.float 0.0
 	mag:	.float 20.0
 	os:	.float 25.0
-	altura:	.asciiz "Altura: "
-	peso:	.asciiz "Peso: "
+	altura:	.asciiz " Altura: "
+	peso:	.asciiz " Peso: "
 	normal:	.asciiz "\n Normal"
 	magro:	.asciiz "\n Magro"
 	obeso:	.asciiz "\n Obeso"

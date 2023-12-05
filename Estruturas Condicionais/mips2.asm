@@ -1,11 +1,12 @@
 # Ler dois números e escrever a comparação entre eles.
 
 .data
-	str1: .asciiz "Valor de A:\n"
-	str2: .asciiz "Valor de B:\n"
+	str1: .asciiz " Valor de A: "
+	str2: .asciiz " Valor de B: "
 	str3: .asciiz " é maior que "
 	str4: .asciiz " é igual a "
 	str5: .asciiz " é menor que "
+	str6: .asciiz " "
 .text
 .globl main
 main:
@@ -26,6 +27,9 @@ main:
 	bgt $t0, $t1, print_maior
 	beq $t0, $t1, print_igual
 
+	li $v0, 4
+	la $a0, str6
+	syscall
 	li $v0, 1
 	move $a0, $t0
 	syscall
@@ -38,6 +42,9 @@ main:
 	b fim
 
 	print_maior:
+       		li $v0, 4
+		la $a0, str6
+		syscall
        		li $v0, 1
         	move $a0, $t0
         	syscall
@@ -50,6 +57,9 @@ main:
         	b fim
 
 	print_igual:
+		li $v0, 4
+		la $a0, str6
+		syscall
         	li $v0, 1
         	move $a0, $t0
         	syscall

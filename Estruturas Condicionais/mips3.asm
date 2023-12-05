@@ -10,9 +10,9 @@
 	os:	.float 25.0
 	altura:	.asciiz "Altura: "
 	peso:	.asciiz "Peso: "
-	normal:	.asciiz "\nNormal \n"
-	magro:	.asciiz "\nMagro \n"
-	obeso:	.asciiz "\nObeso \n"
+	normal:	.asciiz "\n Normal"
+	magro:	.asciiz "\n Magro"
+	obeso:	.asciiz "\n Obeso"
 .text
 .globl main
 main:

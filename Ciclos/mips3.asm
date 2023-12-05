@@ -2,7 +2,7 @@
 
 .data
 	entrada: .asciiz "Introduza um número: "
-	saida: .asciiz "\nEsse número em binário é "
+	saida: .asciiz " Esse número em binário é "
 	zero: .asciiz "0"
 	um: .asciiz "1"
 .text

@@ -13,7 +13,6 @@
 	e: .asciiz " e "
 	ponto: .asciiz "."
 	espaço: .asciiz "\n "
-
 .text
 .globl main
 main:

@@ -1,5 +1,4 @@
 # Escreva um programa que leia 3 números inteiros do utilizador, garantindo que todos eles são positivos e diferentes entre si. Se o utilizador tentar introduzir um valor igual a um valor já introduzido, o programa deverá repetir o pedido de introdução do valor.
-# EM CONSTRUÇÃO: Como validar se o número introduzido é inteiro sem o programa rebentar?
 
 .data
 	barra: .asciiz "\n****************************************************************"
@@ -7,7 +6,7 @@
 	str1: .asciiz "\n Introduza o primeiro número inteiro e positivo: "
 	str2: .asciiz "\n Introduza o segundo número inteiro, positivo e diferente do anterior: "
 	str3: .asciiz "\n Introduza o último número inteiro, positivo e diferente dos anteriores: "
-	erro: .asciiz " Erro: número introduzido inválido. Tente novamente."
+	erro: .asciiz "\n Erro: número introduzido inválido. Tente novamente."
 	fim: .asciiz "\n Os três números introduzidos foram "
 	vir: .asciiz ", "
 	e: .asciiz " e "
@@ -35,14 +34,17 @@ main:
 		li $v0, 4
 		la $a0, str1
 		syscall
-		li $v0, 5
+		li $v0, 51
 		syscall
-		move $t0, $v0
+		move $t0, $a0
 	
 		blez $t0, erro1
 		b segundo
 	
 		erro1:
+			li $v0, 4
+			la $a0, espaço
+			syscall
 			li $v0, 4
 			la $a0, erro
 			syscall
@@ -51,11 +53,14 @@ main:
 	# Leitura do segundo número
 	segundo:
 		li $v0, 4
+		la $a0, espaço
+		syscall
+		li $v0, 4
 		la $a0, str2
 		syscall
-		li $v0, 5
+		li $v0, 51
 		syscall
-		move $t1, $v0
+		move $t1, $a0
 	
 		bgtz $t1, diferente
 		b erro2
@@ -66,6 +71,9 @@ main:
 			
 		erro2:
 			li $v0, 4
+			la $a0, espaço
+			syscall
+			li $v0, 4
 			la $a0, erro
 			syscall
 			b segundo
@@ -73,11 +81,14 @@ main:
 	# Leitura do terceiro número
 	terceiro:
 		li $v0, 4
+		la $a0, espaço
+		syscall
+		li $v0, 4
 		la $a0, str3
 		syscall
-		li $v0, 5
+		li $v0, 51
 		syscall
-		move $t2, $v0
+		move $t2, $a0
 		
 		bgtz $t2, diferente2
 		b erro3
@@ -89,12 +100,18 @@ main:
 			
 		erro3:
 			li $v0, 4
+			la $a0, espaço
+			syscall
+			li $v0, 4
 			la $a0, erro
 			syscall
 			b terceiro
 	
 	# Impressão dos números introduzidos
 	imprimir:
+		li $v0, 4
+		la $a0, espaço
+		syscall
 		li $v0, 4
 		la $a0, barra
 		syscall

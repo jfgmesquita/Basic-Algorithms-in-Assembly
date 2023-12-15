@@ -3,9 +3,12 @@
 .data
 	barra: .asciiz "\n****************************************************************"
 	intro: .asciiz "\n Introduza 3 números inteiros, positivos e diferentes entre si."
-	str1: .asciiz "\n Introduza o primeiro número inteiro e positivo: "
-	str2: .asciiz "\n Introduza o segundo número inteiro, positivo e diferente do anterior: "
-	str3: .asciiz "\n Introduza o último número inteiro, positivo e diferente dos anteriores: "
+	str1: .asciiz "\n Introduza o primeiro número inteiro e positivo na caixa de diálogo. "
+	str11: .asciiz "\n Introduza o primeiro número inteiro e positivo. "
+	str2: .asciiz "\n Introduza o segundo número inteiro, positivo e diferente do anterior na caixa de diálogo. "
+	str22: .asciiz "\n Introduza o segundo número inteiro, positivo e diferente do anterior. "
+	str3: .asciiz "\n Introduza o último número inteiro, positivo e diferente dos anteriores na caixa de diálogo. "
+	str33: .asciiz "\n Introduza o último número inteiro, positivo e diferente dos anteriores. "
 	erro: .asciiz "\n Erro: número introduzido inválido. Tente novamente."
 	fim: .asciiz "\n Os três números introduzidos foram "
 	vir: .asciiz ", "
@@ -25,16 +28,17 @@ main:
 	li $v0, 4
 	la $a0, barra
 	syscall
-	li $v0, 4
-	la $a0, espaço
-	syscall
 	
 	# Leitura do primeiro número
 	primeiro:
 		li $v0, 4
+		la $a0, espaço
+		syscall
+		li $v0, 4
 		la $a0, str1
 		syscall
 		li $v0, 51
+		la $a0, str11
 		syscall
 		move $t0, $a0
 	
@@ -48,6 +52,9 @@ main:
 			li $v0, 4
 			la $a0, erro
 			syscall
+			li $v0, 55
+			la $a0, erro
+			syscall
 			b primeiro
 	
 	# Leitura do segundo número
@@ -59,6 +66,7 @@ main:
 		la $a0, str2
 		syscall
 		li $v0, 51
+		la $a0, str22
 		syscall
 		move $t1, $a0
 	
@@ -76,6 +84,9 @@ main:
 			li $v0, 4
 			la $a0, erro
 			syscall
+			li $v0, 55
+			la $a0, erro
+			syscall
 			b segundo
 	
 	# Leitura do terceiro número
@@ -87,6 +98,7 @@ main:
 		la $a0, str3
 		syscall
 		li $v0, 51
+		la $a0, str33
 		syscall
 		move $t2, $a0
 		
@@ -103,6 +115,9 @@ main:
 			la $a0, espaço
 			syscall
 			li $v0, 4
+			la $a0, erro
+			syscall
+			li $v0, 55
 			la $a0, erro
 			syscall
 			b terceiro

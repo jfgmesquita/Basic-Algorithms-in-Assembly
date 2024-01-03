@@ -14,7 +14,7 @@
 	vir: .asciiz ", "
 	e: .asciiz " e "
 	ponto: .asciiz "."
-	espaço: .asciiz "\n"
+	espaco: .asciiz "\n"
 .text
 .globl main
 main:
@@ -32,7 +32,7 @@ main:
 	# Leitura do primeiro número
 	primeiro:
 		li $v0, 4
-		la $a0, espaço
+		la $a0, espaco
 		syscall
 		li $v0, 4
 		la $a0, str1
@@ -47,7 +47,7 @@ main:
 	
 		erro1:
 			li $v0, 4
-			la $a0, espaço
+			la $a0, espaco
 			syscall
 			li $v0, 4
 			la $a0, erro
@@ -60,7 +60,7 @@ main:
 	# Leitura do segundo número
 	segundo:
 		li $v0, 4
-		la $a0, espaço
+		la $a0, espaco
 		syscall
 		li $v0, 4
 		la $a0, str2
@@ -79,7 +79,7 @@ main:
 			
 		erro2:
 			li $v0, 4
-			la $a0, espaço
+			la $a0, espaco
 			syscall
 			li $v0, 4
 			la $a0, erro
@@ -92,7 +92,7 @@ main:
 	# Leitura do terceiro número
 	terceiro:
 		li $v0, 4
-		la $a0, espaço
+		la $a0, espaco
 		syscall
 		li $v0, 4
 		la $a0, str3
@@ -112,7 +112,7 @@ main:
 			
 		erro3:
 			li $v0, 4
-			la $a0, espaço
+			la $a0, espaco
 			syscall
 			li $v0, 4
 			la $a0, erro
@@ -125,7 +125,7 @@ main:
 	# Impressão dos números introduzidos
 	imprimir:
 		li $v0, 4
-		la $a0, espaço
+		la $a0, espaco
 		syscall
 		li $v0, 4
 		la $a0, barra
